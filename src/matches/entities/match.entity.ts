@@ -36,6 +36,12 @@ export class Match {
   @Column({ name: 'away_team_id', nullable: true })
   awayTeamId: number;
 
+  @Column({ name: 'home_team_rank', nullable: true })
+  homeTeamRank: number;
+
+  @Column({ name: 'away_team_rank', nullable: true })
+  awayTeamRank: number;
+
   @Column({ name: 'score', nullable: true })
   score: string; // 比分结果，例如 "2:3"
 

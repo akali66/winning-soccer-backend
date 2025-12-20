@@ -1,7 +1,8 @@
 import { Match } from "src/matches/entities/match.entity";
 import { Team } from "src/teams/entities/team.entity";
-import { Column, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from "typeorm";
 
+@Entity()
 export class League {
     @PrimaryGeneratedColumn()
     id: number;

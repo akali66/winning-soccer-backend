@@ -4,6 +4,8 @@ export class CreateMatchDto {
   @IsOptional() @IsInt() leagueId?: number;
   @IsOptional() @IsInt() homeTeamId?: number;
   @IsOptional() @IsInt() awayTeamId?: number;
+  @IsOptional() @IsInt() homeTeamRank?: number;
+  @IsOptional() @IsInt() awayTeamRank?: number;
   @IsOptional() @IsString() score?: string;
 
   // h2h & form fields: use IsOptional and IsInt (0/1/2)
