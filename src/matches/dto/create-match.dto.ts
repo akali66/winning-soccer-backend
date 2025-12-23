@@ -1,4 +1,4 @@
-import { IsInt, IsOptional, IsString, IsNumberString, IsNumber } from 'class-validator';
+import { IsInt, IsOptional, IsString, IsNumberString, IsNumber, IsDateString } from 'class-validator';
 
 export class CreateMatchDto {
   @IsOptional() @IsInt() leagueId?: number;
@@ -7,6 +7,9 @@ export class CreateMatchDto {
   @IsOptional() @IsInt() homeTeamRank?: number;
   @IsOptional() @IsInt() awayTeamRank?: number;
   @IsOptional() @IsString() score?: string;
+
+  @IsOptional() @IsDateString() matchTime?: Date;
+  @IsOptional() @IsDateString() dataUpdateTime?: Date;
 
   // h2h & form fields: use IsOptional and IsInt (0/1/2)
   @IsOptional() @IsInt() historyH2H1?: number;

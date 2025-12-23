@@ -45,6 +45,12 @@ export class Match {
   @Column({ name: 'score', nullable: true })
   score: string; // 比分结果，例如 "2:3"
 
+  @Column({ name: 'match_time', type: 'datetime', nullable: true })
+  matchTime: Date;
+
+  @Column({ name: 'data_update_time', type: 'datetime', nullable: true })
+  dataUpdateTime: Date;
+
   // 历史交锋 1-3
   @Column({ name: 'history_h2h1', type: 'tinyint', nullable: true })
   historyH2H1: number;
