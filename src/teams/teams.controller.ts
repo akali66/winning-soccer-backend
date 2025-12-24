@@ -1,4 +1,4 @@
-import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, ParseIntPipe, Post, Put, Query } from '@nestjs/common';
 import { TeamsService } from './teams.service';
 import { CreateTeamDto } from './dto/create-team.dto';
 import { UpdateTeamDto } from './dto/update-team.dto';
@@ -13,8 +13,8 @@ export class TeamsController {
   }
 
   @Get()
-  findAll() {
-    return this.service.findAll();
+  findAll(@Query('name') name?: string) {
+    return this.service.findAll(name);
   }
 
   @Get(':id')

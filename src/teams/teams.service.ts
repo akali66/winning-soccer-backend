@@ -1,6 +1,6 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { Like, Repository } from 'typeorm';
 import { Team } from './entities/team.entity';
 import { CreateTeamDto } from './dto/create-team.dto';
 import { UpdateTeamDto } from './dto/update-team.dto';
@@ -17,7 +17,14 @@ export class TeamsService {
     return this.repo.save(e);
   }
 
-  findAll() {
+  findAll(name?: string) {
+    if (name) {
+      return this.repo.find({
+        where: {
+          name: Like(`%${name}%`),
+        },
+      });
+    }
     return this.repo.find();
   }
 
